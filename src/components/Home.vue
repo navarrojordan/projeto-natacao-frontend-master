@@ -40,19 +40,19 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title">
-        Novidade chegando
+        Lorem ipsum
       </p>
       <p class="subtitle">
-        Novo sistema de gerenciamento de competição de natação.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
       </p>
     </div>
   </div>
 
-  <!-- <div class="hero-foot">
+  <div class="hero-foot">
     <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         <ul>
-          <li class="is-active">
+          <li>
             <a>Home</a>
           </li>
           <li>
@@ -67,7 +67,7 @@
         </ul>
       </div>
     </nav>
-  </div> -->
+  </div>
 </section>
 </template>
 <style >

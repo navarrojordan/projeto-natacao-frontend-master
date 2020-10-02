@@ -25,8 +25,8 @@
         </label> -->
 
         <div class="button-forms">
-        <button class="button is-info"> Esqueci a senha </button>
-        <button class="button is-link"> Entrar </button>
+        <button class="button is-warning"> Esqueci a senha </button>
+        <button class="button is-info"> Entrar </button>
 
         </div>
     </section>
