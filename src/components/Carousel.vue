@@ -1,9 +1,7 @@
 <template>
-<div id="app" class="container">
+<div>
 <!-- <figure class="image is-3by1">
-  <img src="..\assets\slide1.jpg">
     <img src="..\assets\raia.png">
-
 </figure> -->
     <b-carousel>
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
@@ -24,9 +22,9 @@ export default {
   data() {
     return {
       carousels: [
-        // { text: 'Novidade', color: 'warning' },
-        // { text: 'Slide 2', color: 'info' },
-        // { text: 'Slide 3', color: 'success' },
+        { text: 'Slide 1', color: 'warning' },
+        { text: 'Slide 2', color: 'info' },
+        { text: 'Slide 3', color: 'success' },
       ],
     };
   },
@@ -36,18 +34,5 @@ export default {
 // app.$mount('#app');
 </script>
 <style>
-
-.container {
-
-padding: 1px;
-/* margin: 1%; */
-/* margin:0%; */
-    /* background-size:cover; */
-    height: 100vh;
-    width: 100vw;
-    /* margin-right: 0%; */
-/* margin: 1px; */
- /* margin-right: 0%; */
-}
 
 </style>

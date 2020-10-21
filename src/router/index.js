@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../components/Home.vue';
+import Home from '../components/Carousel.vue';
 import Login from '../components/Login.vue';
 import Register from '../components/Register.vue';
+import VisualEvento from '../components/VisualEvento.vue';
+
+import PerfilEvento from '../components/PerfilEvento.vue';
 
 Vue.use(VueRouter);
 
@@ -12,7 +15,11 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-
+  {
+    path: '/visualevento',
+    name: 'VisualEvento',
+    component: VisualEvento,
+  },
   {
     path: '/login',
     name: 'Login',
@@ -22,6 +29,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+  },
+  {
+    path: '/PerfilEvento',
+    name: 'PerfilEvento',
+    component: PerfilEvento,
   },
 
   {

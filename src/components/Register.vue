@@ -33,11 +33,11 @@
             </b-input>
         </b-field>
  <!-- CNPJ ##.###.###/####-## -->
-        <b-field label="CEP">
+        <!-- <b-field label="CEP">
             <b-input v-model="nascimento"
             placeholder="Digite seu CEP">
             </b-input>
-        </b-field>
+        </b-field> -->
         <!-- <b-button  type="is-success"> Cadastrar </b-button> -->
         <label class="checkbox">
         <input type="checkbox">

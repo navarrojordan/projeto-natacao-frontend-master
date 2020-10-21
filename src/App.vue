@@ -1,37 +1,38 @@
 <template>
   <div id="app">
-    <!-- <Header /> -->
-    <!-- <Carousel /> -->
-    <Cep />
+    <Header />
+    <Carousel />
       <router-view/>
-    <Footer />
-    <Home/>
-    <!-- <Login/> -->
+    <Evento />
+    <!-- <VisualEvento /> -->
+<Footer/>
+    <!-- <Home/> -->
     <!-- <Register/> -->
   </div>
 </template>
 
 <script>
-// import Header from '@/components/Header.vue';
+import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-// import Carousel from '@/components/Carousel.vue';
-import Cep from '@/components/Cep.vue';
-// import Home from '@/components/Home.vue';
-
-// import Register from '@/components/Register.vue';
-
-// import Login from '@/components/Login.vue';
+import Evento from '@/components/Evento.vue';
+// import VisualEvento from '@/components/VisualEvento.vue';
+// // import Register from '@/components/Register.vue';
 
 export default {
   components: {
-    // Header,
+    Header,
     Footer,
-    // Carousel,
-    Cep,
+    Evento,
+    // VisualEvento,
+    // Evento2,
     // Home,
-    // Register,
-    // Login,
+    // // Register,
   },
+  // mounted(){
+  //   Usuario.listar().then(resposta => {
+  //     console.log(resposta)
+  //   })
+  // }
 };
 </script>
 

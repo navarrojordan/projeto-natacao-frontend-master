@@ -1,12 +1,14 @@
 <template>
     <div>
         <footer>
+            <nav class="tabs is-boxed is-fullwidth">
               <ul class="footer-menu">
-                  <!-- <li><a href="/">Home</a></li>
-                  <li><a href="/about">Sobre</a></li>
-                  <li><a href="/">Diferencial</a></li>
-                  <li><a href="/">Contato</a></li> -->
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/Register">Sobre</a></li>
+                  <li><a href="/Login">Login</a></li>
+                  <li><a href="/">Contato</a></li>
               </ul>
+             </nav>
         </footer>
     </div>
 </template>
@@ -19,16 +21,17 @@ export default {
 
 <style>
     footer {
-        background: navy;
-        padding: 60px cal((100% - 1200px) /2);
+        background: #0000d9;
         display: flex;
         flex-wrap: wrap;
-        color: #ffffff;
-    }
+
+}
 
     .footer-menu li{
         list-style: none;
-        padding: 10px;
+        padding: 50px;
+        width: 300px;
+
     }
 
     .footer-menu a {
