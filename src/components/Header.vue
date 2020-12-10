@@ -2,14 +2,17 @@
     <div>
         <header>
             <div class="header-brand">
-               <a href="/"> Logo </a>
+               <a href="/"> logo </a>
             </div>
+            <nav class="tabs is-boxed is-fullwidth">
               <ul class="header-menu">
                   <li><a href="/">Home</a></li>
                   <li><a href="/register">Registro</a></li>
                   <li><a href="/login">Login</a></li>
                   <li><a href="/visualevento">Contato</a></li>
+                  <!-- <li><a href="/Filme">Filme</a></li> -->
               </ul>
+            </nav>
         </header>
     </div>
 </template>
@@ -29,7 +32,7 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background: #0000d9;
+    background: #0e0081;
     padding: 10px;
 }
 
@@ -41,6 +44,9 @@ header{
 .header-menu{
     display: flex;
     list-style: none;
+    padding: 10px;
+    /* font-family: ; */
+
 }
 
 .header-menu li {
@@ -51,6 +57,6 @@ header{
 .header-menu li a{
     color: #ffffff;
     text-decoration: none;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 </style>

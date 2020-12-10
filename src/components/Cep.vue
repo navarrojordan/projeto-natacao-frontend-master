@@ -1,20 +1,38 @@
-<template>
- <div id="example-1">
-     <!-- <br><br><br> -->
+    <!-- <div>
+        <footer>
+            <nav class="tabs is-boxed is-fullwidth">
+              <ul class="footer-menu">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/Register">Sobre</a></li>
+                  <li><a href="/Login">Login</a></li>
+                  <li><a href="/">Contato</a></li>
+              </ul>
+             </nav>
+        </footer>
+    </div> -->
 
-  <!-- <button v-on:click=" 1">Jordan </button>
-  <p>O botao foi clicado0 vezes {{ counter }} times.</p><br><br><br> -->
-</div>
-</template>
+// <script>
+// export default {
+//   name: 'Footer',
+// };
+// script
 
-<script>
+// <style>
+//     footer {
+//         background: #0000d9;
+//         display: flex;
+//         flex-wrap: wrap;
 
-export default {
-  name: 'Cep',
-  data() {
-    return {
-      name: 'teste',
-    };
-  },
-};
-</script>
+// }
+
+//     .footer-menu li{
+//         list-style: none;
+//         padding: 50px;
+//         width: 300px;
+
+//     }s
+
+//     .footer-menu a {
+//         color: var(--color-branca);
+//     }
+// </style>

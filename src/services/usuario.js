@@ -1,9 +1,14 @@
-// import { from } from "core-js/fn/array";
-// import { http } from './config'
+import { http } from './config'
 
-// export default {
+export default {
 
-//     listar: () => {
-//         return http.get('usuario')
-//     }
-// }
+    listar: () => {
+        return http.get('usuario')
+    },
+    criar: (data) => {
+        return http.post('/usuario', data)
+    },
+    atualizar: (id, data) => {
+        return http.post('/usuario/'+ id, data)
+    }
+}

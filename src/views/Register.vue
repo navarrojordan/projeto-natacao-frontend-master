@@ -7,6 +7,11 @@
         <h1>Dados Cadastrais</h1>
         <!-- <p>Cadastre ou faça o login</p> -->
 
+        <b-field label="Nome">
+            <b-input v-model="nome"
+            placeholder="Escreva seu nome">
+            </b-input>
+        </b-field>
         <b-field label="Email">
             <b-input v-model="email"
             type="email"
@@ -45,8 +50,7 @@
         </label>
 
         <div class="button-forms">
-        <button class="button is-info"> Criar Conta </button>
-        <!-- <button class="button is-link">Ja tem Conta, Faça o login </button> -->
+        <button @click="salvarUsuario()" class="button is-info"> Criar Conta </button>
 
         <div class="columns">
         <div class="column login-footer">
@@ -62,13 +66,32 @@
 </template>
 
 <script>
+
+// import usuario from "../services/usuario";
 export default {
   name: 'Register',
   data() {
     return {
+      nome: '',
+      email: '',
+      senha: '',
+      confirmesenha: '',
       cpf: '',
     };
   },
+//   methods: {
+//     salvarUsuario ( ){
+//         const data = {
+//             "nome": this.nome,
+//             "documento": this.cpf,
+//             "email": this.email,
+//             "senha": this.senha,
+//         }
+//         usuario.criar(data)
+//         .then(( ) => {console.log ("Criado com Sucesso")})
+//         .catch(error => {console.log(error)})
+//     }
+// }
 };
 </script>
 
