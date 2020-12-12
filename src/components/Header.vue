@@ -9,8 +9,7 @@
                   <li><a href="/">Home</a></li>
                   <li><a href="/register">Registro</a></li>
                   <li><a href="/login">Login</a></li>
-                  <li><a href="/visualevento">Contato</a></li>
-                  <!-- <li><a href="/Filme">Filme</a></li> -->
+                  <li><a href="/visualevento">API FILMES</a></li>
               </ul>
             </nav>
         </header>

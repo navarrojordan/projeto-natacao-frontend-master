@@ -9,7 +9,7 @@
   <div class="panel-block">
         <a >Titulo: </a>
     <p class="control has-icons-left">
-      <input class="input is-small" type="text" v-model="t" placeholder="search">
+      <input class="input is-small" type="text"  placeholder="search" v-model="title">
       <span class="icon is-small is-left">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
@@ -18,7 +18,7 @@
     <div class="panel-block">
         <a>Data: </a>
     <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="search">
+      <input class="input is-small" type="text" placeholder="search" v-model="date">
       <span class="icon is-small is-left">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
@@ -27,19 +27,13 @@
       <div class="panel-block">
         <a>Categoria: </a>
     <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="search">
+      <input class="input is-small" type="text" placeholder="search" v-model="type">
       <span class="icon is-small is-left">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
     </p>
   </div>
-  <!-- <p class="panel-tabs">
-    <a class="is-active">all</a>
-    <a>Titulo</a>
-    <a>Filmes</a>
-    <a>Series</a>
-    <a>Sair</a>
-  </p> -->
+
   <br><br>  <br><br>
 
   <div class="panel-block">
@@ -49,11 +43,11 @@
 
   </div>
 </nav>
-  <div class="container-menu">
+  <!-- <div class="container-menu">
   <b-menu>
     <b-menu-list label="Menu">
       <b-menu-item icon="information-outline" label="Usuario"></b-menu-item>
-      <b-menu-item icon="settings" :active="isActive" expanded>
+      <b-menu-item icon="settings" expanded>
         <template slot="label" slot-scope="props">
           Administrador
           <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-down' : 'menu-up'"></b-icon>
@@ -84,76 +78,77 @@
       <b-menu-item label="Logout"></b-menu-item>
     </b-menu-list>
   </b-menu>
-</div>
+</div> -->
 <div class="container-caixa">
-        <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-              </figure>
-            </div>
-          <div class="media-content">
-            <p class="title is-4">Filme </p>
-            <p class="subtitle is-6">Categoria</p>
-          </div>
-        </div>
-
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
-          <a href="#"> xxxxxx</a>
-          <br>
-        </div>
-      </div>
+    <div v-for="filme in movies" :key="filme.id">
       <div class="card">
         <div class="card-content">
           <div class="media">
             <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              <figure class="image is-64x128">
+                <img :src="filme.Poster">
               </figure>
             </div>
-          <div class="media-content">
-            <p class="title is-4">Filme</p>
-            <p class="subtitle is-6">Categoria</p>
+            <div class="media-content">
+              <p class="title is-4">{{filme.Title}}</p>
+              <p class="subtitle is-6">{{filme.Type}}</p>
+              <p class="subtitle is-6">{{filme.Year}}</p>
+            </div>
           </div>
         </div>
-
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
-          <a href="#"> xxxxxx</a>
-          <br>
-        </div>
       </div>
-      </div>
-      </div>
+    </div>
 </div>
 </section>
 </template>
 
 <script>
 export default {
+  created() {
+    this.getInitMovies();
+  },
+
+  // AQUI CRIA UM METDO PARA BUSCAR OS FILMES POR TITLE, TYPE E DATE
+  methods: {
+    buscarfilme() {
+      const vm = this;
+
+      const url = `http://www.omdbapi.com/?s=${vm.title}&type=${vm.type}&y=${vm.date}&apikey=5dddbcb1`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((response) => {
+          this.movies = response.Search;
+          console.log(vm.movies);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    getInitMovies() {
+      const vm = this;
+      const url = 'http://www.omdbapi.com/?s=marvel&&apikey=5dddbcb1';
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((response) => {
+          this.movies = response.Search;
+          console.log(vm.movies);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
   data() {
     return {
-      isActive: true,
+      title: '',
+      type: '',
+      date: '',
+      movies: [],
     };
   },
-  // axios ({
-  // method: 'get'
-  //     URL: 'http://www.omdbapi.com/?'
-  //     ResponseType: 'stream'
-  //   })
-// axios({
-//   method: 'get',
-//   url: 'http://bit.ly/2mTM3nY',
-//   responseType: 'stream'
-// })
-//   .then(function (response) {
-//     response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
-//   });
+
 };
 </script>
 <style scoped>
@@ -166,8 +161,18 @@ export default {
   width: 20%;
 }
 .container-caixa{
-  width: 80%;
-  height: 100vh;
-  /* background-color:aqua; */
+  width: 100%;
+  text-align: center;
+  /* height: 100vh; */
+}
+.panel{
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+.card{
+  width: 700px;
+
 }
 </style>
